@@ -21,11 +21,18 @@ The following **bonus** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented user stories with login:
 
 <img src='https://i.imgur.com/CtrDgfp.gif' title='Video Walkthrough' width='250' height='400' alt='Video Walkthrough' />
 
 If the file doesn't load, please click the link:
 [GIF](https://i.imgur.com/CtrDgfp.gif)
+
+Here's a walkthrough of implemented user stories with sign up:
+
+<img src='https://i.imgur.com/JtIJjHS.gif' title='Video Walkthrough' width='250' height='400' alt='Video Walkthrough' />
+
+If the file doesn't load, please click the link:
+[GIF](https://i.imgur.com/JtIJjHS.gif)
 
 GIF created with [EZGIF](https://ezgif.com).
