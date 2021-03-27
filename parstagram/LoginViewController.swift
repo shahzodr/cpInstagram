@@ -1,6 +1,6 @@
 //
 //  LoginViewController.swift
-//  parstagram
+//  Parstagram
 //
 //  Created by SRP on 3/19/21.
 //
@@ -9,8 +9,7 @@ import UIKit
 import Parse
 
 class LoginViewController: UIViewController {
-    
-    
+
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
@@ -19,7 +18,6 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
     
     @IBAction func onSignIn(_ sender: Any) {
         let username = usernameField.text!
@@ -34,17 +32,15 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func onSignUp(_ sender: Any) {
+    @IBAction func onSignup(_ sender: Any) {
         let user = PFUser()
-        
         user.username = usernameField.text
         user.password = passwordField.text
         
         user.signUpInBackground { (success, error) in
             if success {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            } else {
+            } else{
                 print("Error: \(error?.localizedDescription)")
             }
         }

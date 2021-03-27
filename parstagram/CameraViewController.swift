@@ -1,20 +1,18 @@
 //
 //  CameraViewController.swift
-//  parstagram
+//  Parstagram
 //
 //  Created by SRP on 3/19/21.
 //
 
 import UIKit
-import Parse
 import AlamofireImage
+import Parse
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentField: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,22 +21,22 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onSubmitButton(_ sender: Any) {
-        let post = PFObject(className: "Posts" )
+        let post = PFObject(className: "Posts")
         
         post["caption"] = commentField.text!
         post["author"] = PFUser.current()!
         
         let imageData = imageView.image!.pngData()
-        let file = PFFileObject(data: imageData!)
+        let file = PFFileObject(name: "image.png", data: imageData!)
         
         post["image"] = file
         
         post.saveInBackground { (success, error) in
             if success {
                 self.dismiss(animated: true, completion: nil)
-                print("saved!")
+                print("Saved!")
             } else {
-                print("error!")
+                print("Error saving!")
             }
         }
     }
@@ -55,19 +53,19 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
         present(picker, animated: true, completion: nil)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
         
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af_imageAspectScaled(toFill: size)
         
         imageView.image = scaledImage
         
         dismiss(animated: true, completion: nil)
     }
-    
     /*
     // MARK: - Navigation
 
@@ -79,3 +77,4 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     */
 
 }
+

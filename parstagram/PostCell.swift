@@ -1,6 +1,6 @@
 //
 //  PostCell.swift
-//  parstagram
+//  Parstagram
 //
 //  Created by SRP on 3/19/21.
 //
@@ -12,6 +12,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

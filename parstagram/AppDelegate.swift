@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  parstagram
+//  Parstagram
 //
 //  Created by SRP on 3/19/21.
 //
@@ -10,7 +10,6 @@ import Parse
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
